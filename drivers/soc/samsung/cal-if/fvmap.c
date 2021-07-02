@@ -318,13 +318,13 @@ static void fvmap_copy_from_sram(void __iomem *map_base, void __iomem *sram_base
 			if(fvmap_header[i].num_of_lv==17&&fvmap_header[i].num_of_members==2)	   //for big cores
 			{
 				if(old->table[j].rate==2496000)
-					new->table[j].volt = old->table[j].volt + 25000 + 25000 + 25000;
+					new->table[j].volt = old->table[j].volt + 50000 + 50000 + 6250;
 				if(old->table[j].rate==2392000)
-					new->table[j].volt = old->table[j].volt + 25000 + 25000 + 12500;
+					new->table[j].volt = old->table[j].volt + 50000 + 25000 + 12500;
 				if(old->table[j].rate==2288000)
-					new->table[j].volt = old->table[j].volt + 25000 + 12500;
+					new->table[j].volt = old->table[j].volt + 25000 + 25000 + 12500;
 				if(old->table[j].rate==2184000)
-					new->table[j].volt = old->table[j].volt + 12500;
+					new->table[j].volt = old->table[j].volt + 12500 + 12500 + 6250;
 				if(old->table[j].rate==2080000)
 					new->table[j].volt = old->table[j].volt - 43750;
 				if(old->table[j].rate==1976000)
@@ -360,13 +360,13 @@ static void fvmap_copy_from_sram(void __iomem *map_base, void __iomem *sram_base
 			else if(fvmap_header[i].num_of_lv==18&&fvmap_header[i].num_of_members==4)	//for little cores
 			{
 				if(old->table[j].rate==2002000)
-					new->table[j].volt = old->table[j].volt + 100000 + 100000 + 50000 + 6250;
+					new->table[j].volt = old->table[j].volt + 12500 + 25000 + 25000;
 				if(old->table[j].rate==1898000)
-					new->table[j].volt = old->table[j].volt + 75000 + 50000 + 25000;
+					new->table[j].volt = old->table[j].volt + 12500 + 25000 + 6250;
 				if(old->table[j].rate==1794000)
-					new->table[j].volt = old->table[j].volt;
+					new->table[j].volt = old->table[j].volt + 12500;
 				if(old->table[j].rate==1690000)
-					new->table[j].volt = old->table[j].volt - 25000 - 12500 - 6250;
+					new->table[j].volt = old->table[j].volt - 25000;
 				if(old->table[j].rate==1586000)
 					new->table[j].volt = old->table[j].volt - 25000 - 12500 - 6250 - 6250;
 				if(old->table[j].rate==1482000)
