@@ -687,7 +687,9 @@ static irqreturn_t s2m_rtc_alarm_irq(int irq, void *data)
 
 static const struct rtc_class_ops s2m_rtc_ops = {
 	.read_time = s2m_rtc_read_time,
+#ifdef CONFIG_RTC_HIGH_RES
 	.read_hrtime = s2m_rtc_read_hrtime,
+#endif
 	.set_time = s2m_rtc_set_time,
 	.read_alarm = s2m_rtc_read_alarm,
 	.set_alarm = s2m_rtc_set_alarm,
