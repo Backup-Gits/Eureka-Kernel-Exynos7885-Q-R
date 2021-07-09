@@ -38,8 +38,10 @@ static int exynos7885_devfreq_int_cmu_dump(struct exynos_devfreq_data *data)
 
 static int exynos7885_devfreq_int_reboot(struct exynos_devfreq_data *data)
 {
-	data->max_freq = data->reboot_freq;
+	data->max_freq = 533000;
 	data->devfreq->max_freq = data->max_freq;
+	pr_info(" bus_int_max_freq : %7d kHz, devfreq_max_freq : %7d kHz, Chatur_bus_int",
+					data->max_freq, data->devfreq->max_freq);
 
 	mutex_lock(&data->devfreq->lock);
 	update_devfreq(data->devfreq);
